@@ -24,21 +24,21 @@ gsap.to(".main_heading", {
     }
 });
 
-gsap.to(".first_row", {
-    x: -400
-});
+// gsap.to(".first_row", {
+//     x: -400
+// });
 
-gsap.to(".second_row", {
-    x: 100
-});
+// gsap.to(".second_row", {
+//     x: 100
+// });
 
-gsap.to(".third_row", {
-    x: -400
-});
+// gsap.to(".third_row", {
+//     x: -400
+// });
 
-gsap.to(".images_overlay .inner", {
-    y: -750
-});
+// gsap.to(".images_overlay .inner", {
+//     y: -750
+// });
 
 gsap.to(".images_overlay", {
     width: "100%",
