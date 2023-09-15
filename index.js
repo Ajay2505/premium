@@ -225,9 +225,9 @@ const headings = document.querySelectorAll(".project_heading > div");
 
 headings.forEach((heading, idx) => {
     gsap.to(heading, {
-        width: "250px",
+        width: "200px",
         borderRadius: "0 0 150px 150px",
-        height: 120,
+        height: 100,
         scrollTrigger: {
             trigger: heading.parentElement,
             start: "top top",
@@ -241,6 +241,7 @@ headings.forEach((heading, idx) => {
     
     gsap.to(heading.querySelector(".hide_wrapper"), {
         opacity: 0,
+        marginTop: -30,
         scrollTrigger: {
             trigger: heading.parentElement,
             start: "top top",
@@ -506,19 +507,20 @@ document.querySelectorAll("section.bg_bright").forEach(section => {
     });
 });
 
-let darkHeader = false;
+let prevDarkHeader = false;
 document.querySelector("header > .icon_wrapper").addEventListener("click", (evt) => {
     evt.currentTarget.classList.toggle("active");
-    if (document.querySelector("header").classList.contains("dark")) {
-        darkHeader = true;
-        document.querySelector("header").classList.remove("dark");
-    } else {
-        darkHeader = false;
-    }
     document.querySelector("header .custom_nav").classList.toggle("active");
+
+    // prevDarkHeader = document.querySelector("header").classList.contains("dark");
+
     if (evt.currentTarget.classList.contains("active")) {
         lenis.stop();
+        document.querySelector("header").classList.remove("dark");
     } else {
+        if (prevDarkHeader) {
+            document.querySelector("header").classList.add("dark");
+        }
         lenis.start();
     }
 });
